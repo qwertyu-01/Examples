@@ -46,6 +46,3 @@ Q
 
 // сокращенный просмотр коммитов
 git log--oneline
-
-// переключиться на ветку
-git switch branch-name
