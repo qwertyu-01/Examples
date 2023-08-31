@@ -17,6 +17,15 @@ git commit -m "Комментарий к коммиту".
 // отправить изменения на сервер
 git push
 
+// забрать ветку из удаленного репозитория
+git checkout origin/<branch-name> -b <branch-name>
+
+// переключиться на любую локальную ветку
+git checkout <branch-name>
+
+// переключиться на ветку
+git switch branch-name
+
 // создать ветку в локальном репозитории
 git checkout -b <branch-name>
 
