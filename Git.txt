@@ -22,3 +22,27 @@ git checkout origin/<branch-name> -b <branch-name>
 
 // переключиться на любую локальную ветку
 git checkout <branch-name>
+
+// создать ветку в локальном репозитории
+git checkout -b <branch-name>
+
+// отправить ветку в удаленный репозиторий
+git push origin <branch-name>
+
+// все ветки локального репозитория
+git branch
+
+// все ветки удаленного репозитория
+git branch -r
+
+// посмотреть историю коммитов
+git log
+
+// выйти из git log
+Q
+
+// сокращенный просмотр коммитов
+git log--oneline
+
+// переключиться на ветку
+git switch branch-name
