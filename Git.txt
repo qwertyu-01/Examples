@@ -37,6 +37,9 @@ git commit -a -m "Комментарий к коммиту".
 // отправить изменения на сервер
 git push
 
+// создать удаленную ветку, связанную с текущей локальной веткой 
+git push --set-upstream origin <branch>
+
 // забрать ветку из удаленного репозитория
 git checkout origin/<branch-name> -b <branch-name>
 
@@ -60,6 +63,10 @@ git branch -r
 
 // удалить ветку локального репозитория
 git branch -d  <local_branch_name>
+
+// удалить ветку удаленного репозитория
+git push <remote_rep_name> -d <remote_branch_name>
+// remote_rep_name - например, origin
 
 // настройка локальной ветки на слежение за удаленной
 git branch -u <remote_branch, ex: origin/serverfix>
@@ -101,3 +108,6 @@ git rm --cached README
 
 // вывод графа коммитов в удобном виде
 git log --oneline --decorate --graph --all
+
+// смержить указанную ветку с текущей веткой
+git merge <branch>
