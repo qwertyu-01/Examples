@@ -64,6 +64,14 @@ git branch -r
 // удалить ветку локального репозитория
 git branch -d  <local_branch_name>
 
+// просмотреть ветки, слитые с текущей или не слитые с текущей
+git branch --merged
+git branch --no-merged
+git branch --no-merged <branch> // покажет ветки, не слитые с веткой, указанной в аргументе <branch>
+
+// переименовать локальную ветку
+git branch --move <bad-branch-name> <corrected-branch-name>
+
 // удалить ветку удаленного репозитория
 git push <remote_rep_name> -d <remote_branch_name>
 // remote_rep_name - например, origin
@@ -111,3 +119,8 @@ git log --oneline --decorate --graph --all
 
 // смержить указанную ветку с текущей веткой
 git merge <branch>
+
+// получить изменения из удаленного репозитория
+git fetch origin
+
+remain 3.5, 3.6, 3.7 // not commited
