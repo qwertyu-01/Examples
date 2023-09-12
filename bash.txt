@@ -1,0 +1,9 @@
+// установить wget
+yum install wget
+
+// скачать файл из репозитория
+wget http://repos.1c-bitrix.ru/yum/bitrix-env.sh
+
+// изменить права на файл
+// подробнее в https://younglinux.info/bash/chmod
+chmod a+x bitrix-env.sh
