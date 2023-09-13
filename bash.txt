@@ -7,3 +7,56 @@ wget http://repos.1c-bitrix.ru/yum/bitrix-env.sh
 // изменить права на файл
 // подробнее в https://younglinux.info/bash/chmod
 chmod a+x bitrix-env.sh
+
+// вывод полного пути к текущему каталогу - Print Working Directory
+pwd
+
+// запустить исполняемый файл
+./filename
+
+// просмотр списка файлов/папок
+ls
+
+// перемещение по каталогам
+cd <folder name>
+cd ..
+
+// удаление непустой папки
+// rm - удаление, -r (recursive) удаление содержимого папки, f - не спрашивать подтверждение удаления содержимого
+// v - показывать имена удаляемых файлов
+$ rm –rf folder-name
+
+// посмотреть версию дистрибутива системы
+cat /etc/*release
+
+// сменить владельца папки/файла (созданное под root доступно только для root)
+chown testbase:testbase test.txt // сменить владельца файла
+chown -R testbase:testbase user // сменить владельца папки
+
+// показать путь к приложению
+whereis <app_name>
+whereis vim
+
+// показать последние 100 команд
+history
+
+// Сколько места свободно на дисках
+df -h
+
+//Сколько весит директория
+du -sh
+du -sh * // с разбиением
+
+// имя и IP хоста
+hostname
+hostname -I
+
+// обновить систему
+yum update
+
+// полцчить инфу по команде
+man <comand name>
+man ls
+
+// Комментировать в midnight Commander
+mcedit

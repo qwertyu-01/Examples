@@ -1,0 +1,114 @@
+# пакетные менеджеры
+dnf - для Centos 8
+yum - для Centos 7
+
+# обновить систему
+yum update
+
+# установить Midnight Commander
+yum install mc
+
+# установка apache
+yum install httpd
+
+# запуск Midnight Commander
+mc
+
+# переключение с окна mc на консоль
+ctrl + O
+
+# vim
+:q // выйти
+:q! // выйти без сохранения
+:wq // выйти и сохранить
+
+# копировать файл с локального пк на сервер (в консоли локального ПК указывать)
+# подробнее https://help.reg.ru/support/servery-vps/oblachnyye-servery/rabota-s-serverom/kopirovaniye-faylov-cherez-ssh
+scp [имя пользователя]@[имя сервера/ip-адрес]:[путь к файлу] [путь к файлу]
+scp C:\Users\UVGamov\Desktop\bitrix_server_test.php root@45.87.246.134:/root
+
+# запуск скриптов *.sh возможен только по полному пути.
+# Можно запускать скрипт *.sh только по имени, если путь к скрипту указан в переменной PATH
+
+# Установка сетевых утилит
+ifconfig, netstat, nslookup
+yum install net-tools
+yum install bind-utils
+
+# Отключить SELinux
+mcedit /etc/sysconfig/selinux
+поменять SELINUX=disabled
+
+# В общем случае, сеть в Centos настраивается с помощью NetworkManager и его консольной утилиты nmtui
+
+# Настройка сети
+mcedit /etc/sysconfig/network-scripts/ifcfg-eth0
+# Если нет, yum install network-scripts
+
+
+#
+# установить и запустить nginx
+#
+
+    # подключить EPEL-репозиторий
+    yum install epel-release
+
+    # установить Nginx
+    yum install nginx
+
+    # Разрешите HTTP и HTTPS-трафик на брандмауэре
+    firewall-cmd --permanent --add-service=http 
+    firewall-cmd --permanent --add-service=https
+
+    # Перезагрузите брандмауэр
+    firewall-cmd --reload
+
+    # Запустить Nginx
+    systemctl start nginx
+
+    # Настройте автозапуск Nginx при перезагрузке системы
+    systemctl enable nginx
+
+    # статус службы Nginx
+    systemctl status nginx
+
+    # проверка работы nginx
+    # перейти в браузере на сервер. Если открыта страница CentOS, то nginx настроена корректно
+
+#
+#
+#
+
+
+#
+# Настройка Nginx для работы с PHP
+#
+
+    # становите пакеты php и php-fpm
+    yum install php php-fpm
+
+    # Запустите службу php-fpm
+    systemctl start php-fpm
+
+    # Разрешите автозапуск php-fpm
+    systemctl enable php-fpm
+
+    # Откройте конфигурационный файл сайта
+    mcedit /etc/nginx/nginx.conf
+
+    # зменить // не найдено то, то надо заменить
+    location / {
+        root   /usr/share/nginx/html;
+        index  index.php;
+    }
+    # на
+    location ~ \.php$ {
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $root_path$fastcgi_script_name;
+        include fastcgi_params;
+    }
+
+*
+*
+*
