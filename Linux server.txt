@@ -5,6 +5,9 @@ yum - для Centos 7
 # обновить систему
 yum update
 
+# очистить кеш всех пакетов
+yum clean all && yum update
+
 # установить Midnight Commander
 yum install mc
 
@@ -38,6 +41,9 @@ yum install bind-utils
 # Отключить SELinux
 mcedit /etc/sysconfig/selinux
 поменять SELINUX=disabled
+
+# проверить статус SELinux
+sestatus
 
 # В общем случае, сеть в Centos настраивается с помощью NetworkManager и его консольной утилиты nmtui
 

@@ -17,6 +17,11 @@ chmod +x bitrix-env.sh
 // запустить скрипт установки окружения Битрикс24
 ./bitrix-env.sh
 
+// другой вариант
+wget https://repo.bitrix.info/yum/bitrix-env.sh
+# chmod +x bitrix-env.sh
+# ./bitrix-env.sh
+
 // перезагрузить сервер
 reboot
 
@@ -28,4 +33,7 @@ reboot
 
 // перейти по доменному имени сервера и устанавливать Б24 в интерфейсе
 // подробнее https://o2it.ru/blog/ustanovka-korobochnoj-versii-bitriks24/
+
+// через меню управления окружением menu.sh обновить версию php до 8.1
+
 
